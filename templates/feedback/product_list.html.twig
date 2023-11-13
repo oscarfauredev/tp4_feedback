@@ -1,0 +1,17 @@
+{# templates/feedback/product_list.html.twig #}
+
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste des Produits{% endblock %}
+
+{% block body %}
+    <h1>Liste des Produits</h1>
+
+    <ul>
+        {% for product in products %}
+            <li>
+                <a href="{{ path('feedback', {'productId': product.id}) }}">{{ product.nom }} - {{ product.prix }} €</a>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}

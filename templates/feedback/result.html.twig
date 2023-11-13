@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Feedback Result{% endblock %}
+
+{% block body %}
+    <h1>Feedback Result</h1>
+
+    <h3>Produit sélectionné : {{ product.nom }} - {{ product.prix }} €</h3>
+
+    <p>Nom du client: {{ feedback.nomClient }}</p>
+    <p>Email du client: {{ feedback.emailClient }}</p>
+    <p>Note du produit: {{ feedback.noteProduit }}</p>
+    <p>Commentaires: {{ feedback.commentaires }}</p>
+    <p>Date de soumission: {{ feedback.dateSoumission ? feedback.dateSoumission.format('Y-m-d') : 'N/A' }}</p>
+
+    <a href="{{ path('product_list') }}" class="btn btn-primary">Retour à la liste des produits</a>
+
+{% endblock %}
