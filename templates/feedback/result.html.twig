@@ -2,17 +2,27 @@
 
 {% block title %}Feedback Result{% endblock %}
 
+{% block head %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('path/to/bootstrap.min.css') }}">
+{% endblock %}
+
 {% block body %}
-    <h1>Feedback Result</h1>
+    <div class="container mt-5">
+        <h1 class="mb-4">Feedback Result</h1>
 
-    <h3>Produit sélectionné : {{ product.nom }} - {{ product.prix }} €</h3>
+        <h3>Produit sélectionné : {{ product.name }} - {{ product.price }} €</h3>
 
-    <p>Nom du client: {{ feedback.nomClient }}</p>
-    <p>Email du client: {{ feedback.emailClient }}</p>
-    <p>Note du produit: {{ feedback.noteProduit }}</p>
-    <p>Commentaires: {{ feedback.commentaires }}</p>
-    <p>Date de soumission: {{ feedback.dateSoumission ? feedback.dateSoumission.format('Y-m-d') : 'N/A' }}</p>
+        <div class="card mb-4">
+            <div class="card-body">
+                <p class="card-text"><strong>Nom du client:</strong> {{ feedback.nomClient }}</p>
+                <p class="card-text"><strong>Email du client:</strong> {{ feedback.emailClient }}</p>
+                <p class="card-text"><strong>Note du produit:</strong> {{ feedback.noteProduit }}</p>
+                <p class="card-text"><strong>Commentaires:</strong> {{ feedback.commentaires }}</p>
+                <p class="card-text"><strong>Date de soumission:</strong> {{ feedback.dateSoumission ? feedback.dateSoumission.format('Y-m-d') : 'N/A' }}</p>
+            </div>
+        </div>
 
-    <a href="{{ path('product_list') }}" class="btn btn-primary">Retour à la liste des produits</a>
-
+        <a href="{{ path('product_list') }}" class="btn btn-primary">Retour à la liste des produits</a>
+    </div>
 {% endblock %}

@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block head %}
+    <title>Index</title>
+    <link rel="stylesheet" href="{{ asset('path/to/bootstrap.min.css') }}">
+{% endblock %}
+
+{% block body %}
+    <div class="container mt-5">
+        <h1>Bienvenue</h1>
+        
+        <div class="row mt-4">
+            <div class="col-md-6">
+                <a href="{{ path('product_list') }}" class="btn btn-primary btn-lg">Liste des produits</a>
+            </div>
+            <div class="col-md-6">
+                <a href="{{ path('feedback_list') }}" class="btn btn-success btn-lg">Liste des feedbacks</a>
+            </div>
+        </div>
+    </div>
+{% endblock %}

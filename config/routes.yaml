@@ -3,3 +3,11 @@ controllers:
         path: ../src/Controller/
         namespace: App\Controller
     type: attribute
+
+index:
+    path: /
+    controller: App\Controller\FeedbackController::index
+
+feedback_list:
+    path: /feedbacks
+    controller: App\Controller\FeedbackController::feedbackList

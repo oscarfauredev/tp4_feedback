@@ -15,6 +15,13 @@ class Feedback
     #[ORM\Column]
     private ?int $id = null;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=Product::class, inversedBy="feedbacks")
+     * @ORM\JoinColumn(name="product_id", referencedColumnName="id", nullable=false)
+     * @Assert\NotNull
+     */
+    private ?Product $product = null;
+
     #[ORM\Column(length: 255)]
     #[Assert\NotBlank]
     private ?string $nomClient = null;
@@ -37,6 +44,18 @@ class Feedback
     public function getId(): ?int
     {
         return $this->id;
+    }
+
+    public function getProduct(): ?Product
+    {
+        return $this->product;
+    }
+
+    public function setProduct(?Product $product): static
+    {
+        $this->product = $product;
+
+        return $this;
     }
 
     public function getNomClient(): ?string

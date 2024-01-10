@@ -9,3 +9,11 @@ services:
     App\Controller\FeedbackController:
         arguments:
             $productService: '@App\Service\ProductService'
+
+    App\Repository\FeedbackRepository:
+        arguments:
+            $registry: '@doctrine'
+
+    App\Repository\ProductRepository:
+        arguments:
+            $registry: '@doctrine'

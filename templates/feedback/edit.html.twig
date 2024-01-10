@@ -1,15 +1,10 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Feedback Form{% endblock %}
-
-{% block head %}
-    {{ parent() }}
-    <link rel="stylesheet" href="{{ asset('path/to/bootstrap.min.css') }}">
-{% endblock %}
+{% block title %}Feedback Edit{% endblock %}
 
 {% block body %}
-    <div class="container mt-5">
-        <h1>Feedback Form</h1>
+    <div class="container">
+        <h1>Edit Feedback</h1>
 
         {{ form_start(form) }}
         {{ form_row(form.productId) }}
